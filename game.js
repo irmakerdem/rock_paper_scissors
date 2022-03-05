@@ -27,22 +27,33 @@ class Game {
     }
   }
   determineUser2Choice() {
-    return this.classicFighters[Math.floor(Math.random()*this.classicFighters.length)]
+    this.user2Choice = this.classicFighters[Math.floor(Math.random()*this.classicFighters.length)]
+  //   this.user1Choice = this.classicFighters[Math.floor(Math.random()*this.classicFighters.length)]
   }
   determineWinner() {
-    if (user1Choice === user2Choice) {
+    if (this.user1Choice === this.user2Choice) {
       this.isDraw = true;
       this.winner = null;
-    } else if (user1Choice === 'rock' && user2Choice === 'scissors') {
+    } else if (this.user1Choice === 'rock' && this.user2Choice === 'scissors') {
       this.winner = 'human';
       this.isDraw = false;
-    } else if (user1Choice === 'paper' && user2Choice === 'rock') {
+    } else if (this.user1Choice === 'paper' && this.user2Choice === 'rock') {
       this.winner = 'human';
       this.isDraw = false
-    } else if (user1Choice === 'scissors' && user2Choice === 'paper') {
+    } else if (this.user1Choice === 'scissors' && this.user2Choice === 'paper') {
       this.winner = 'human';
       this.isDraw = false;
+    } else {
+      this.winner = 'computer';
     }
+    this.updateScore();
+}
+  updateScore() {
+  if (this.winner === 'human') {
+    this.user1.takeTurn()
+  } else if (this.winner === 'computer') {
+    this.user2.takeTurn()
+  }
 }
 };
   // setupClassicGame() {
@@ -62,8 +73,7 @@ class Game {
   //
   // }
 
-// A way to keep track of the data for the game board
-// A way to keep track of the selected game type
-// A way to check the Game’s board data for win conditions
+
+
 // A way to detect when a game is a draw (no one has won)
 // A way to reset the Game’s board to begin a new game
