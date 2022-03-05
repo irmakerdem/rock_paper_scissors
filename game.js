@@ -17,6 +17,18 @@ class Game {
       this.gameType = 'difficult'
     }
   }
+  determineUser1Choice(choiceId) {
+    if (choiceId === "rockId"){
+      this.user1Choice = 'rock'
+    } else if (choiceId === "paperId") {
+      this.user1Choice = 'paper'
+    } else if (choiceId === "scissorsId") {
+      this.user1Choice = 'scissors'
+    }
+  }
+  determineUser2Choice() {
+    return this.classicFighters[Math.floor(Math.random()*this.classicFighters.length)]
+  }
 };
   // setupClassicGame() {
   //   //make two player instances (both computers for now)
