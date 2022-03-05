@@ -1,7 +1,7 @@
 class Game {
   constructor() {
     this.gameType = null;
-    this.classicFighters = ["rock", "paper", "scissors"];
+    this.classicFighters = ['rock', 'paper', 'scissors'];
     this.user1 = new Player ('Irmak');
     this.user2 = new Player ('computer');
     this.user1Choice = null;
@@ -9,6 +9,13 @@ class Game {
     this.isDraw = false;
     this.winner = null;
     // this.difficultFighters = ["rock", "paper", "scissors", "alien", "lizard"];
+  }
+  determineGameType(gameId) {
+    if (gameId === 'classicId') {
+      this.gameType = 'classic';
+    } else if (gameId === 'difficultId'){
+      this.gameType = 'difficult'
+    }
   }
 };
   // setupClassicGame() {

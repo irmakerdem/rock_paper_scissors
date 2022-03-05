@@ -17,7 +17,7 @@
       <section class="middle-side">
         <h1>ROCK - PAPER - SCISSORS</h1>
         <h2>Choose 1 of 2 Games Below:</h2>
-        <section class="classic-game">
+        <section class="classic-game" id="classicId">
           <section class="classic-title">CLASSIC</section>
           <section class="classic-rules">
             <p>🪨 > ✂️</p>
@@ -25,7 +25,7 @@
             <p>✂️ > 📄</p>
           </section>
         </section>
-        <section class="difficult-game">
+        <section class="difficult-game" id="difficultId">
           <section class="difficult-title">DIFFICULT</section>
           <section class="difficult-rules">
             <p>🪨 > ✂️ & 🦎</p>
@@ -37,6 +37,18 @@
           </section>
         </section>
         <button type="button" name="change-game-button">CHANGE GAME</button>
+        <section class="classic-images hidden">
+          <img class="rock-image" src="./assets/rock.png" alt="rock icon" id="rockId">
+          <img class="paper-image" src="./assets/paper.png" alt="paper icon" id="paperId">
+          <img class="scissors-image" src="./assets/scissors.png" alt="scissors icon" id="scissorsId">
+        </section>
+        <section class="difficult-images hidden">
+          <img class="rock-image" src="./assets/rock.png" alt="rock icon" id="dRockId">
+          <img class="paper-image" src="./assets/paper.png" alt="paper icon" id="dPaperId">
+          <img class="scissors-image" src="./assets/scissors.png" alt="scissors icon" id="dScissorsId">
+          <img class="alien-image" src="./assets/alien.png" alt="green alien icon" id="dAlienId">
+          <img class="lizard-image" src="./assets/lizard.png" alt="green lizard icon" id="dLizardId">
+        </section>
       </section>
       <section class="right-side">
         <section class="computer-box">
@@ -52,12 +64,6 @@
   </body>
 </html>
 
-
-<!-- <img class="rock-image" src="./assets/rock.png">
-<img class="paper-image" src="./assets/paper.png">
-<img class="scissors-image" src="./assets/scissors.png">
-<img class="alien-image" src="./assets/alien.png">
-<img class="lizard-image" src="./assets/lizard.png"> -->
 
 
 <!-- ALL NOTES

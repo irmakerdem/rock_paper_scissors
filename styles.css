@@ -79,3 +79,7 @@ button {
 button:hover {
   background-color: green;
 }
+
+.hidden {
+  display: none;
+}
