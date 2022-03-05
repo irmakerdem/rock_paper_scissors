@@ -18,17 +18,32 @@ class Game {
     }
   }
   determineUser1Choice(choiceId) {
-    if (choiceId === "rockId"){
+    if (choiceId === 'rockId'){
       this.user1Choice = 'rock'
-    } else if (choiceId === "paperId") {
+    } else if (choiceId === 'paperId') {
       this.user1Choice = 'paper'
-    } else if (choiceId === "scissorsId") {
+    } else if (choiceId === 'scissorsId') {
       this.user1Choice = 'scissors'
     }
   }
   determineUser2Choice() {
     return this.classicFighters[Math.floor(Math.random()*this.classicFighters.length)]
   }
+  determineWinner() {
+    if (user1Choice === user2Choice) {
+      this.isDraw = true;
+      this.winner = null;
+    } else if (user1Choice === 'rock' && user2Choice === 'scissors') {
+      this.winner = 'human';
+      this.isDraw = false;
+    } else if (user1Choice === 'paper' && user2Choice === 'rock') {
+      this.winner = 'human';
+      this.isDraw = false
+    } else if (user1Choice === 'scissors' && user2Choice === 'paper') {
+      this.winner = 'human';
+      this.isDraw = false;
+    }
+}
 };
   // setupClassicGame() {
   //   //make two player instances (both computers for now)
