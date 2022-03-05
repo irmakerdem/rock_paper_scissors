@@ -34,7 +34,6 @@ p {
   border: 4px black solid;
   margin-left: 300px;
   margin-right: 300px;
-  /* padding: 0 150px; */
   font-size: 25px;
 }
 
@@ -53,12 +52,8 @@ p {
   flex-direction: column;
   justify-content: space-evenly;
   width: 70%;
-  background-color: teal;
+  background-color: orange;
   text-align: center;
-}
-
-.extra-choices {
-  border-top: 1px solid black;
 }
 
 .human-box, .computer-box {
@@ -82,5 +77,9 @@ button {
 }
 
 button:hover {
-  background-color: orange;
+  background-color: green;
+}
+
+.hidden {
+  display: none;
 }
