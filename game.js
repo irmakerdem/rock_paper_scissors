@@ -13,7 +13,7 @@ class Game {
   determineGameType(gameId) {
     if (gameId === 'classicId') {
       this.gameType = 'classic';
-    } else if (gameId === 'difficultId'){
+    } else if (gameId === 'difficultId') {
       this.gameType = 'difficult'
     }
   }
@@ -56,24 +56,8 @@ class Game {
   }
 }
 };
-  // setupClassicGame() {
-  //   //make two player instances (both computers for now)
-  //   //use this.score in player to do score++
-  //   //keep score persistent
-  // }
-  // startClassicGame() {
-  //
-  // }
-  // setupDifficultGame() {
-  //   //make two player instances (both computers for now)
-  //   //use this.score in player to do score++
-  //   //keep score persistent
-  // }
-  // startDifficultGame() {
-  //
-  // }
 
 
-
+//keep score persistent when game type changes
 // A way to detect when a game is a draw (no one has won)
-// A way to reset the Game’s board to begin a new game
+// A way to reset the Game’s board to begin a new game (set scores to 0?)

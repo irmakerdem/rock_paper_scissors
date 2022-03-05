@@ -1,7 +1,6 @@
 class Player {
   constructor(playerName) {
     this.name = playerName;
-    // 'human' || 'computer';
     // this.token = select from humanTokens array || '😃';
     this.score = 0;
   }
