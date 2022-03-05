@@ -1,22 +1,13 @@
 class Player {
-  constructor(userType, userToken) {
-    this.name = userType;
-    this.token = userToken; //-->need to make multiple options
-    this.wins = 0;
+  constructor(userName, userToken) {
+    this.name = userName;
+    this.token = userToken; //-->need to make multiple options?
+    this.score = 0;
   }
-  takeTurn() {
-    this.wins++;
+  takeTurn(array) {
+    return array[Math.floor(Math.random()*array.length)]
   }
 };
-
-function getRandomElement(array) {
-  return array[Math.floor(Math.random()*array.length)]
-}
-
-function randomizeClassicFighter() {
-    var randomFighter = this.classicFighter[getRandomElement(fighters)];
-}
-
 
 // NOTES
 // math.floor returns  a whole number (rounds down) --> whole # is needed to access index in array
