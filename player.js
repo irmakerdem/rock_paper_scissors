@@ -1,13 +1,22 @@
 class Player {
-  constructor(userName, userToken) {
-    this.name = userName;
-    this.token = userToken; //-->need to make multiple options?
+  constructor(playerName) {
+    this.name = playerName;
+    // 'human' || 'computer';
+    // this.token = select from humanTokens array || '😃';
     this.score = 0;
   }
-  takeTurn(array) {
-    return array[Math.floor(Math.random()*array.length)]
-  }
 };
+//   selectToken(){
+//     this.humanTokens = ['🥳', '😎', '🤠']; //have this as default token in HTML: 😃
+//     this.computerToken = 🤖 ///already is in HTML
+//   }
+//   takeTurn(array) {
+//     if (player === 'human') {
+//       allow human to choose 1 of 3 fighters in classicFighters array
+//     } else {
+//     return array[Math.floor(Math.random()*array.length)]
+//   }
+// };
 
 // NOTES
 // math.floor returns  a whole number (rounds down) --> whole # is needed to access index in array
