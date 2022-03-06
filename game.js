@@ -1,34 +1,51 @@
 class Game {
   constructor() {
-    this.gameType = null;
+    this.gameType = 'classic';
     this.user1 = new Player('human');
     this.user2 = new Player('computer');
+    this.user1Choice;
+    this.user2Choice;
     this.isDraw = false;
-    this.winner = this.determineClassicWinner();
+    this.winner = this.determineWinner();
   }
-  determineGameType(gameId) {
-    if (gameId === 'classicId') {
+  changeGameType(gameId) { //needed for DOM
+    if (gameId === 'classic') {
       this.gameType = 'classic';
-    } else if (gameId === 'difficultId') {
+    } else if (gameId === 'difficult') {
       this.gameType = 'difficult'
     }
   }
-//chnage name to determineWinner not just classic
-  <p>🪨 > ✂️ & 🦎</p>
-} else if (this.user1.choice === 'rock' && (this.user2.choice === 'scissors' || this.user2.choice === 'lizard')) {
-  determineClassicWinner() {
-    if (this.user1.choice === this.user2.choice) {
+  updateUserChoice() {
+    if (this.gameType === 'classic') {
+      this.user1Choice = this.user1.takeTurnClassic();
+      this.user2Choice = this.user2.takeTurnClassic();
+    }
+    if (this.gameType === 'difficult') {
+      this.user1Choice = this.user1.takeTurnDifficult();
+      this.user2Choice = this.user2.takeTurnDifficult();
+    }
+  }
+  determineWinner() {
+    if (this.user1Choice === this.user2Choice) {
       this.isDraw = true
       this.winner = null
-    } else if (this.user1.choice === 'rock' && this.user2.choice === 'scissors') {
+    } else if (this.user1Choice === 'rock' && (this.user2Choice === 'scissors' || this.user2Choice === 'lizard')) {
       this.user1.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.user1.choice === 'paper' && this.user2.choice === 'rock') {
+    } else if (this.user1Choice === 'paper' && (this.user2Choice === 'rock' || this.user2Choice === 'alien')) {
       this.user1.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.user1.choice === 'scissors' && this.user2.choice === 'paper') {
+    } else if (this.user1Choice === 'scissors' && (this.user2Choice === 'paper' || this.user2Choice === 'lizard')) {
+      this.user1.winRound()
+      this.isDraw = false
+      return 'human'
+    } else if (this.user1Choice === 'lizard' && (this.user2Choice === 'paper' || this.user2Choice === 'alien')) {
+      this.user1.winRound()
+      this.isDraw = false
+      return 'human'
+    } else if (this.user1Choice === 'alien' && (this.user2Choice === 'scissors' || this.user2Choice === 'rock')) {
       this.user1.winRound()
       this.isDraw = false
       return 'human'
@@ -37,31 +54,8 @@ class Game {
       this.isDraw = false
       return 'computer'
     }
-    this.updateScore()
-  }
-  updateScore() {
-  if (this.winner === 'human') {
-
-  } else if (this.winner === 'computer') {
-    this.user2.winRound()
-  }
   }
 };
-
-
-
-// determineUser1Choice(choiceId) {
-//   if (choiceId === 'rockId'){
-//     this.user1Choice = 'rock'
-//   } else if (choiceId === 'paperId') {
-//     this.user1Choice = 'paper'
-//   } else if (choiceId === 'scissorsId') {
-//     this.user1Choice = 'scissors'
-//   }
-// }
-// determineUser2Choice() {
-//   this.user2Choice = this.classicFighters[Math.floor(Math.random()*this.classicFighters.length)]
-// }
 
 
 //keep score persistent when game type changes
