@@ -3,18 +3,29 @@ var currentGame = new Game();
 
 //on page load, create 2 players
 
-//when you click classic box, invoke currentGame.determineGameType assign this.gameType to "classic";
+var classicGameBox = document.querySelector('.classic-game');
+var difficultGameBox = document.querySelector('.difficult-game');
+var changeGameButton = document.querySelector('.change-game-button');
+
+classicGameBox.addEventListener('click', currentGame.changeGameType);
+difficultGameBox.addEventListener('click', currentGame.changeGameType);
+
+
 // anonynymous function () --> currentGame.determineGameType(event.target.id);
 // determineUser1Choice
 // determineUser1Choice
 // determineWinner
 
-// show and hide helper fcn
+function show(element) {
+  element.classList.remove('hidden');
+};
+
+function hide(element) {
+  element.classList.add('hidden');
+};
+
+  // event.preventDefault();
 
 // setTimeout(function () {}, 600);
 
-
-
-
-//would be best to make a different class for each fighter??
-//OR have an array within an object within an array??
+//reset game to 0-0

@@ -1,11 +1,9 @@
 class Player {
   constructor(playerName) {
     this.name = playerName;
-    this.token = null;
+    this.token = '😃';
     this.score = 0;
     this.classicFighters = ['rock', 'paper', 'scissors'];
-    // this.choiceClass = this.takeTurnClassic();
-    // this.choiceDifficult = this.takeTurnDifficult();
     this.difficultFighters = ['rock', 'paper', 'scissors', 'alien', 'lizard'];
   }
   takeTurnClassic(choiceId) {
@@ -23,7 +21,7 @@ class Player {
 };
 
 
-    // this.token = select from humanTokensWe  array || '😃';
+    // this.token = select from humanTokens  array || '😃';
 // selectToken(){
 //   this.humanTokens = ['🥳', '😎', '🤠']; //have this as default token in HTML: 😃
 //   this.computerToken = 🤖 ///already is in HTML

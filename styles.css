@@ -35,6 +35,7 @@ p {
   margin-left: 300px;
   margin-right: 300px;
   font-size: 25px;
+  cursor: pointer;
 }
 
 .left-side, .right-side {

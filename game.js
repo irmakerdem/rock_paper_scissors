@@ -14,6 +14,7 @@ class Game {
     } else if (gameId === 'difficult') {
       this.gameType = 'difficult'
     }
+    console.log("click worked");
   }
   updateUserChoice() {
     if (this.gameType === 'classic') {
