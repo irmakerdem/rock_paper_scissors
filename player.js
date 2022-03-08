@@ -23,7 +23,7 @@ class Player {
 };
 
 
-    // this.token = select from humanTokens array || '😃';
+    // this.token = select from humanTokensWe  array || '😃';
 // selectToken(){
 //   this.humanTokens = ['🥳', '😎', '🤠']; //have this as default token in HTML: 😃
 //   this.computerToken = 🤖 ///already is in HTML

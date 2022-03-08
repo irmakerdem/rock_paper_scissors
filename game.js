@@ -3,10 +3,10 @@ class Game {
     this.gameType = 'classic';
     this.user1 = new Player('human');
     this.user2 = new Player('computer');
-    this.user1Choice;
-    this.user2Choice;
+    this.user1Choice = null;
+    this.user2Choice = null;
     this.isDraw = false;
-    this.winner = this.determineWinner();
+    this.winner = null;
   }
   changeGameType(gameId) { //needed for DOM
     if (gameId === 'classic') {
@@ -24,6 +24,7 @@ class Game {
       this.user1Choice = this.user1.takeTurnDifficult();
       this.user2Choice = this.user2.takeTurnDifficult();
     }
+    this.winner = this.determineWinner();
   }
   determineWinner() {
     if (this.user1Choice === this.user2Choice) {
