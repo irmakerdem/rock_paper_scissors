@@ -1,16 +1,15 @@
 class Player {
   constructor(playerName) {
     this.name = playerName;
-    this.token = '😃';
+    this.token = null;
     this.score = 0;
-    this.classicFighters = ['rock', 'paper', 'scissors'];
-    this.difficultFighters = ['rock', 'paper', 'scissors', 'alien', 'lizard'];
+    this.choice = null;
   }
   takeTurnClassic(choiceId) {
-    return choiceId || this.getRandomElement(this.classicFighters);
+    this.choice = choiceId || this.getRandomElement(currentGame.classicFighters);
   }
   takeTurnDifficult(choiceId) {
-    return choiceId || this.getRandomElement(this.difficultFighters);
+    this.choice = choiceId || this.getRandomElement(currentGame.difficultFighters);
   }
   getRandomElement(array) {
     return array[Math.floor(Math.random()*array.length)];

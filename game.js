@@ -1,12 +1,12 @@
 class Game {
   constructor() {
     this.gameType = 'classic';
-    this.user1 = new Player('human');
-    this.user2 = new Player('computer');
-    this.user1Choice = null;
-    this.user2Choice = null;
+    this.human = new Player('human');
+    this.computer = new Player('computer');
     this.isDraw = false;
     this.winner = null;
+    this.classicFighters = ['rock', 'paper', 'scissors'];
+    this.difficultFighters = ['rock', 'paper', 'scissors', 'alien', 'lizard']
   }
   changeGameType(gameId) { //needed for DOM
     if (gameId === 'classic') {
@@ -18,41 +18,41 @@ class Game {
   }
   updateUserChoice() {
     if (this.gameType === 'classic') {
-      this.user1Choice = this.user1.takeTurnClassic();
-      this.user2Choice = this.user2.takeTurnClassic();
+      this.human.takeTurnClassic();
+      this.computer.takeTurnClassic();
     }
     if (this.gameType === 'difficult') {
-      this.user1Choice = this.user1.takeTurnDifficult();
-      this.user2Choice = this.user2.takeTurnDifficult();
+      this.human.takeTurnDifficult();
+      this.computer.takeTurnDifficult();
     }
     this.winner = this.determineWinner();
   }
   determineWinner() {
-    if (this.user1Choice === this.user2Choice) {
+    if (this.human === this.computer) {
       this.isDraw = true
       this.winner = null
-    } else if (this.user1Choice === 'rock' && (this.user2Choice === 'scissors' || this.user2Choice === 'lizard')) {
+    } else if (this.human === 'rock' && (this.computer === 'scissors' || this.computer === 'lizard')) {
       this.user1.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.user1Choice === 'paper' && (this.user2Choice === 'rock' || this.user2Choice === 'alien')) {
+    } else if (this.human === 'paper' && (this.computer === 'rock' || this.computer === 'alien')) {
       this.user1.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.user1Choice === 'scissors' && (this.user2Choice === 'paper' || this.user2Choice === 'lizard')) {
+    } else if (this.human === 'scissors' && (this.computer === 'paper' || this.computer === 'lizard')) {
       this.user1.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.user1Choice === 'lizard' && (this.user2Choice === 'paper' || this.user2Choice === 'alien')) {
+    } else if (this.human === 'lizard' && (this.computer === 'paper' || this.computer === 'alien')) {
       this.user1.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.user1Choice === 'alien' && (this.user2Choice === 'scissors' || this.user2Choice === 'rock')) {
+    } else if (this.human === 'alien' && (this.computer === 'scissors' || this.computer === 'rock')) {
       this.user1.winRound()
       this.isDraw = false
       return 'human'
     } else {
-      this.user2.winRound()
+      this.computer.winRound()
       this.isDraw = false
       return 'computer'
     }
