@@ -16,39 +16,39 @@ class Game {
     }
     console.log("click worked");
   }
-  updateUserChoice() {
+  updateUserChoice(choiceId) {
     if (this.gameType === 'classic') {
-      this.human.takeTurnClassic();
+      this.human.takeTurnClassic(choiceId);
       this.computer.takeTurnClassic();
     }
     if (this.gameType === 'difficult') {
-      this.human.takeTurnDifficult();
+      this.human.takeTurnDifficult(choiceId);
       this.computer.takeTurnDifficult();
     }
     this.winner = this.determineWinner();
   }
   determineWinner() {
-    if (this.human === this.computer) {
+    if (this.human.choice === this.computer.choice) {
       this.isDraw = true
       this.winner = null
-    } else if (this.human === 'rock' && (this.computer === 'scissors' || this.computer === 'lizard')) {
-      this.user1.winRound()
+    } else if (this.human.choice === 'rock' && (this.computer.choice === 'scissors' || this.computer.choice === 'lizard')) {
+      this.human.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.human === 'paper' && (this.computer === 'rock' || this.computer === 'alien')) {
-      this.user1.winRound()
+    } else if (this.human.choice === 'paper' && (this.computer.choice === 'rock' || this.computer.choice === 'alien')) {
+      this.human.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.human === 'scissors' && (this.computer === 'paper' || this.computer === 'lizard')) {
-      this.user1.winRound()
+    } else if (this.human.choice === 'scissors' && (this.computer.choice === 'paper' || this.computer.choice === 'lizard')) {
+      this.human.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.human === 'lizard' && (this.computer === 'paper' || this.computer === 'alien')) {
-      this.user1.winRound()
+    } else if (this.human.choice === 'lizard' && (this.computer.choice === 'paper' || this.computer.choice === 'alien')) {
+      this.human.winRound()
       this.isDraw = false
       return 'human'
-    } else if (this.human === 'alien' && (this.computer === 'scissors' || this.computer === 'rock')) {
-      this.user1.winRound()
+    } else if (this.human.choice === 'alien' && (this.computer.choice === 'scissors' || this.computer.choice === 'rock')) {
+      this.human.winRound()
       this.isDraw = false
       return 'human'
     } else {

@@ -93,6 +93,7 @@ button {
 
 button:hover {
   background-color: green;
+  cursor: pointer;
 }
 
 .fighter-images {
@@ -105,6 +106,22 @@ button:hover {
 }
 
 .rock-image, .paper-image, .scissors-image, .alien-image, .lizard-image {
+  height: 200px;
+  width: 200px;
+  /* cursor: pointer; */
+}
+
+.chosen-fighter {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+  width: 70%;
+}
+
+.human-chosen-image, .computer-chosen-image {
   height: 200px;
   width: 200px;
 }
