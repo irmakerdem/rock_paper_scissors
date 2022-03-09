@@ -8,7 +8,7 @@ class Game {
     this.classicFighters = ['rock', 'paper', 'scissors'];
     this.difficultFighters = ['rock', 'paper', 'scissors', 'alien', 'lizard']
   }
-  changeGameType(gameId) { //needed for DOM
+  changeGameType(gameId) {
     if (gameId === 'classic') {
       this.gameType = 'classic';
     } else if (gameId === 'difficult') {
@@ -58,8 +58,3 @@ class Game {
     }
   }
 };
-
-
-//keep score persistent when game type changes
-// A way to detect when a game is a draw (no one has won)
-// A way to reset the Game’s board to begin a new game (set scores to 0?)

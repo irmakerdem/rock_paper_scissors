@@ -1,10 +1,8 @@
+//GLOBAL VARIABLES//
 var currentGame = new Game();
 //never reassign currentGame and its data to anything (it's okay to use them though!)
 
-//on page load, create 2 players
-// window.addEventListener('load', ???????);
-
-
+//QUERY SELECTORS//
 var classicGameBox = document.querySelector('.classic-game');
 var difficultGameBox = document.querySelector('.difficult-game');
 var changeGameButton = document.querySelector('.change-game-button');
@@ -20,6 +18,7 @@ var gameResultText = document.querySelector('.game-result-text');
 var humanDisplayedScore = document.querySelector('.human-displayed-score');
 var computerDisplayedScore = document.querySelector('.computer-displayed-score');
 
+//EVENT LISTENERS//
 classicGameBox.addEventListener('click', function() {
   startClassic()
   console.log(classicGameBox.closest('#classic').id);
@@ -32,10 +31,15 @@ difficultGameBox.addEventListener('click', function() {
 });
 
 fighterImageBox.addEventListener('click', function() {
+  if (event.target.id === 'change-button') {
+    changeGame()
+    return
+  }
   currentGame.updateUserChoice(event.target.id)
   displayFighters()
 });
 
+//FUNCTIONS//
 function show(element) {
   element.classList.remove('hidden');
 };
@@ -62,7 +66,7 @@ function startDifficult() {
   show(alienImage);
 }
 
-function checkChoiceIdMatchHuman() {
+function checkChoiceIdMatchHumanChoice() {
   if (currentGame.human.choice === 'rock') {
     humanChosenFighter.src = "./assets/rock.png"
   } else if (currentGame.human.choice === 'paper') {
@@ -76,12 +80,8 @@ function checkChoiceIdMatchHuman() {
 }
 }
 
-
-//check currrnet choice's source and change it to match image of choice
-//pick fighter
-//chnage source of fighter in order to
-
-function checkChoiceIdMatchComputer() {
+//check current choice's source and change it to match image of choice
+function checkChoiceIdMatchComputerChoice() {
   if (currentGame.computer.choice === 'rock') {
     computerChosenFighter.src = "./assets/rock.png"
   } else if (currentGame.computer.choice === 'paper') {
@@ -97,13 +97,16 @@ function checkChoiceIdMatchComputer() {
 
 function displayFighters() {
   hide(fighterImageBox)
-  checkChoiceIdMatchHuman()
-  checkChoiceIdMatchComputer()
+  checkChoiceIdMatchHumanChoice()
+  checkChoiceIdMatchComputerChoice()
   displayWinnerText()
   show(chosenBothFighter)
   hide(chooseFighterText);
   updateDisplayedScores()
+  setTimeout(gameCycle, 3000)
 }
+
+//run displayFighters for 3 sec, and then run gameCycle for 3sec
 
  function displayWinnerText() {
    if (currentGame.winner === 'human') {
@@ -120,17 +123,25 @@ function updateDisplayedScores() {
   computerDisplayedScore.innerText = `score: ${currentGame.computer.score}`
 }
 
-function changeGame() {
-
+function gameCycle() {
+  gameResultText.innerText = null;
+  show(fighterImageBox)
+  hide(chosenBothFighter)
+  show(chooseFighterText);
 }
 
+function changeGame() {
+  show(classicGameBox);
+  show(difficultGameBox);
+  show(chooseGameText);
+  hide(chooseFighterText);
+  hide(fighterImageBox);
+  hide(lizardImage);
+  hide(alienImage);
+}
 
-//setTimeout(function, 3000);
-
-//home page button?
+//hover
 
 //reset game to 0-0 --> requires local storage
-
-//maintain wins on sidebars
 
 //add tokens array
