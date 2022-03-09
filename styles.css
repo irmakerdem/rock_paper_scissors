@@ -110,7 +110,7 @@ button:hover {
 .rock-image, .paper-image, .scissors-image, .alien-image, .lizard-image {
   height: 200px;
   width: 200px;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 .chosen-fighter {

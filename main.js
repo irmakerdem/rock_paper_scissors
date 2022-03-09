@@ -17,6 +17,8 @@ var chosenBothFighter = document.querySelector('.chosen-fighter');
 var gameResultText = document.querySelector('.game-result-text');
 var humanDisplayedScore = document.querySelector('.human-displayed-score');
 var computerDisplayedScore = document.querySelector('.computer-displayed-score');
+var domToken = document.querySelector('.token');
+var tokenButton = document.querySelector('.token-button');
 
 //EVENT LISTENERS//
 classicGameBox.addEventListener('click', function() {
@@ -39,7 +41,16 @@ fighterImageBox.addEventListener('click', function() {
   displayFighters()
 });
 
+tokenButton.addEventListener('click', selectToken);
+
 //FUNCTIONS//
+function selectToken() {
+  console.log('running');
+  console.log(currentGame.human.tokens);
+  currentGame.human.tokens.unshift(currentGame.human.tokens.pop());
+  domToken.innerHTML = currentGame.human.tokens[0];
+}
+
 function show(element) {
   element.classList.remove('hidden');
 };
@@ -92,7 +103,7 @@ function checkChoiceIdMatchComputerChoice() {
     computerChosenFighter.src = "./assets/alien.png"
   } else if (currentGame.computer.choice === 'lizard') {
     computerChosenFighter.src = "./assets/lizard.png"
-}
+  }
 }
 
 function displayFighters() {
@@ -139,8 +150,6 @@ function changeGame() {
   hide(lizardImage);
   hide(alienImage);
 }
-
-//hover
 
 //reset game to 0-0 --> requires local storage
 
