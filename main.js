@@ -1,6 +1,5 @@
 //GLOBAL VARIABLES//
 var currentGame = new Game();
-//never reassign currentGame and its data to anything (it's okay to use them though!)
 
 //QUERY SELECTORS//
 var classicGameBox = document.querySelector('.classic-game');
@@ -23,7 +22,6 @@ var tokenButton = document.querySelector('.token-button');
 //EVENT LISTENERS//
 classicGameBox.addEventListener('click', function() {
   startClassic()
-  console.log(classicGameBox.closest('#classic').id);
   currentGame.changeGameType(classicGameBox.closest('#classic').id)
 });
 
@@ -45,8 +43,6 @@ tokenButton.addEventListener('click', selectToken);
 
 //FUNCTIONS//
 function selectToken() {
-  console.log('running');
-  console.log(currentGame.human.tokens);
   currentGame.human.tokens.unshift(currentGame.human.tokens.pop());
   domToken.innerHTML = currentGame.human.tokens[0];
 }
@@ -88,10 +84,9 @@ function checkChoiceIdMatchHumanChoice() {
     humanChosenFighter.src = "./assets/alien.png"
   } else if (currentGame.human.choice === 'lizard') {
     humanChosenFighter.src = "./assets/lizard.png"
-}
+  }
 }
 
-//check current choice's source and change it to match image of choice
 function checkChoiceIdMatchComputerChoice() {
   if (currentGame.computer.choice === 'rock') {
     computerChosenFighter.src = "./assets/rock.png"
@@ -117,17 +112,15 @@ function displayFighters() {
   setTimeout(gameCycle, 3000)
 }
 
-//run displayFighters for 3 sec, and then run gameCycle for 3sec
-
- function displayWinnerText() {
-   if (currentGame.winner === 'human') {
-     gameResultText.innerText = `🎉 HUMAN won!!! 🎉`
-   } else if (currentGame.winner === 'computer') {
-     gameResultText.innerText = `COMPUTER won!!! ☹️`
-   } else {
-     gameResultText.innerText = `It's a draw!!! 😑`
-   }
+function displayWinnerText() {
+ if (currentGame.winner === 'human') {
+   gameResultText.innerText = `🎉 HUMAN won!!! 🎉`
+ } else if (currentGame.winner === 'computer') {
+   gameResultText.innerText = `COMPUTER won!!! ☹️`
+ } else {
+   gameResultText.innerText = `It's a draw!!! 😑`
  }
+}
 
 function updateDisplayedScores() {
   humanDisplayedScore.innerText = `score: ${currentGame.human.score}`
@@ -150,7 +143,3 @@ function changeGame() {
   hide(lizardImage);
   hide(alienImage);
 }
-
-//reset game to 0-0 --> requires local storage
-
-//add tokens array
