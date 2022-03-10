@@ -35,7 +35,8 @@ fighterImageBox.addEventListener('click', function() {
     changeGame()
     return
   }
-  currentGame.updateUserChoice(event.target.id)
+  var choiceId = event.target.id
+  currentGame.updateUserChoice(choiceId)
   displayFighters()
 });
 
