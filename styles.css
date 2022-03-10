@@ -1,21 +1,22 @@
 * {
-  /* border: 2px solid blue; */
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
 html, body {
   display: flex;
-  width: 100%;
   height: 100%;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 60px;
   margin: 0;
 }
 
 h2 {
-  font-size: 35px;
+  font-size: 40px;
   margin: 0;
 }
 
@@ -25,59 +26,105 @@ p {
 
 .main-section {
   display: flex;
+  height: 100%;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
 }
 
 .classic-game, .difficult-game {
   border: 4px black solid;
+  cursor: pointer;
+  font-size: 25px;
   margin-left: 300px;
   margin-right: 300px;
-  font-size: 25px;
+}
+
+.classic-game {
+  height: 145px;
+  width: 230px;
+}
+
+.difficult-game {
+  height: 215px;
+  width: 230px;
 }
 
 .left-side, .right-side {
-  display: flex;
-  justify-content: center;
-  width: 15%;
   background-color: purple;
-  text-align: center;
+  display: flex;
   font-size: 30px;
   font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
 }
 
 .middle-side {
+  align-items: center;
+  background-color: orange;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 70%;
-  background-color: orange;
   text-align: center;
+  width: 70%;
 }
 
 .human-box, .computer-box {
+  font-size: 35px;
   margin-top: 50px;
 }
 
 .difficult-title, .classic-title {
-  font-size: 30px;
   color: purple;
+  font-size: 35px;
   font-weight: bold;
 }
 
 button {
+  align-self: center;
+  border-radius: 20px;
   display: flex;
   font-size: 20px;
-  padding: 10px 30px;
-  border-radius: 20px;
-  width: 175px;
   font-weight: bold;
-  margin-left: 400px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 10px 30px;
+  width: 175px;
 }
 
 button:hover {
   background-color: green;
+  cursor: pointer;
+}
+
+.fighter-images {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  justify-content: space-evenly;
+  width: 70%;
+}
+
+.rock-image, .paper-image, .scissors-image, .alien-image, .lizard-image {
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+}
+
+.chosen-fighter {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 400px;
+  justify-content: space-evenly;
+  width: 70%;
+}
+
+.human-chosen-image, .computer-chosen-image {
+  height: 200px;
+  width: 200px;
 }
 
 .hidden {

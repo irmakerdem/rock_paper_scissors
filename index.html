@@ -2,6 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>Rock Paper Scissors</title>
   </head>
@@ -9,15 +12,18 @@
     <section class="main-section">
       <section class="left-side">
         <section class="human-box">
-          <p>😃</p>
+          <p class="token">😃</p>
           <p>HUMAN</p>
-          <p>SCORE: </p>
+          <p class="human-displayed-score">SCORE: 0</p>
+          <br>
+          <button class="token-button">Change Token</button>
         </section>
       </section>
       <section class="middle-side">
-        <h1>ROCK - PAPER - SCISSORS</h1>
-        <h2>Choose 1 of 2 Games Below:</h2>
-        <section class="classic-game" id="classicId">
+        <h1 class="page-title">ROCK - PAPER - SCISSORS</h1>
+        <h2 class="page-subtitle1">Choose 1 of 2 Games Below:</h2>
+        <h2 class="page-subtitle2 hidden">Choose a Fighter!</h2>
+        <section class="classic-game" id="classic">
           <section class="classic-title">CLASSIC</section>
           <section class="classic-rules">
             <p>🪨 > ✂️</p>
@@ -25,7 +31,7 @@
             <p>✂️ > 📄</p>
           </section>
         </section>
-        <section class="difficult-game" id="difficultId">
+        <section class="difficult-game" id="difficult">
           <section class="difficult-title">DIFFICULT</section>
           <section class="difficult-rules">
             <p>🪨 > ✂️ & 🦎</p>
@@ -36,25 +42,27 @@
             <div/>
           </section>
         </section>
-        <button type="button" name="change-game-button">CHANGE GAME</button>
-        <section class="classic-images hidden">
-          <img class="rock-image" src="./assets/rock.png" alt="rock icon" id="rockId">
-          <img class="paper-image" src="./assets/paper.png" alt="paper icon" id="paperId">
-          <img class="scissors-image" src="./assets/scissors.png" alt="scissors icon" id="scissorsId">
+        <section class="fighter-images hidden">
+          <img class="rock-image" src="./assets/rock.png" alt="rock icon" id="rock">
+          <img class="paper-image" src="./assets/paper.png" alt="paper icon" id="paper">
+          <img class="scissors-image" src="./assets/scissors.png" alt="scissors icon" id="scissors">
+          <img class="alien-image hidden" src="./assets/alien.png" alt="green alien icon" id="alien">
+          <img class="lizard-image hidden" src="./assets/lizard.png" alt="green lizard icon" id="lizard">
+          <button type="button" class="change-game-button" id="change-button">CHANGE GAME</button>
         </section>
-        <section class="difficult-images hidden">
-          <img class="rock-image" src="./assets/rock.png" alt="rock icon" id="dRockId">
-          <img class="paper-image" src="./assets/paper.png" alt="paper icon" id="dPaperId">
-          <img class="scissors-image" src="./assets/scissors.png" alt="scissors icon" id="dScissorsId">
-          <img class="alien-image" src="./assets/alien.png" alt="green alien icon" id="dAlienId">
-          <img class="lizard-image" src="./assets/lizard.png" alt="green lizard icon" id="dLizardId">
+        <section class="chosen-fighter hidden">
+          <h2 class="game-result-text"></h2>
+          <div>
+            <img class="human-chosen-image" src="" alt="">
+            <img class="computer-chosen-image" src="" alt="">
+          </div>
         </section>
       </section>
       <section class="right-side">
         <section class="computer-box">
           <p>🤖</p>
           <p>COMPUTER</p>
-          <p>SCORE: </p>
+          <p class="computer-displayed-score">SCORE: 0</p>
         </section>
       </section>
     </section>
@@ -63,17 +71,3 @@
     <script src="./main.js"></script>
   </body>
 </html>
-
-
-
-<!-- ALL NOTES
-
-----HEAD----
-head is a container for metadata (data about data)
-head is placed between <html> and <body>
-HTML metadata is data about the HTML document. Metadata is not displayed.
-
-----
-
-
- -->
