@@ -24,25 +24,27 @@ Choose one of two game challenges and see if you can beat the computer!
 - CSS
 
 ### Set Up
-1.  Clone this [repo](https://github.com/irmakerdem/rock_paper_scissors).
+1.  Clone this [repository](https://github.com/irmakerdem/rock_paper_scissors).
 2. `cd` into the directory.
 3. Run `open index.html`.
 
 ### Deployment Link
-- Or simply go play: https://irmakerdem.github.io/rock_paper_scissors/
+- Simply go play: https://irmakerdem.github.io/rock_paper_scissors/
 
 ### Features
-![COLORandom Gif](https://media.giphy.com/media/4I7SEcl6Hf6q8cxY12/giphy.gif)
-
 - User can choose 1 of 2 games types: classic vs difficult
 - User can choose from a variety of emojis as their token
-- User can visualize the two chosen fighters going head to head for 3 sec with a result statement to see who won
+
+![Rock-Paper-Scissors gif showing emoji options](https://media.giphy.com/media/gvKJrNuGlQ1hfkgfhg/giphy.gif)
+- User can visualize the two chosen fighters and see who won
 - User can maintain their score regardless of game type change
+
+![Rock-Paper-Scissors gif showing emoji options](https://media.giphy.com/media/W3mCdUBgq6soY7ggUe/giphy.gif)
 
 ### Reflection
 - The most challenging part of this project was keeping properties within the appropriate two classes (e.g. list of fighters should be in Game class, not Player class; player's choice should be in Player class). It was very easy to lose functionality when attempting to move properties over to the other class.
 - The second most challenging part was coming up with an event listener for when user changes game type. Using the id in HTML became evident for solving this problem.
-- Overall, I was happy to have used event.target.closest and event.target.id for the first time in a project!
+- Overall, I was happy to have used event.target.closest and event.target.id for the first time in a project! It was really fun and really challenging even though it seemed very simple at the start.
 
 ### Future Features
 - Mini token appears next to mouse when clicking on chosen fighter
