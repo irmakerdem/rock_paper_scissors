@@ -4,7 +4,6 @@ var currentGame = new Game();
 //QUERY SELECTORS//
 var classicGameBox = document.querySelector('.classic-game');
 var difficultGameBox = document.querySelector('.difficult-game');
-var changeGameButton = document.querySelector('.change-game-button');
 var fighterImageBox = document.querySelector('.fighter-images');
 var chooseGameText = document.querySelector('.page-subtitle1');
 var chooseFighterText = document.querySelector('.page-subtitle2');
@@ -46,7 +45,7 @@ tokenButton.addEventListener('click', selectToken);
 function selectToken() {
   currentGame.human.tokens.unshift(currentGame.human.tokens.pop());
   domToken.innerHTML = currentGame.human.tokens[0];
-}
+};
 
 function show(element) {
   element.classList.remove('hidden');
@@ -62,7 +61,7 @@ function startClassic() {
   hide(chooseGameText);
   show(chooseFighterText);
   show(fighterImageBox);
-}
+};
 
 function startDifficult() {
   hide(classicGameBox);
@@ -72,35 +71,35 @@ function startDifficult() {
   show(fighterImageBox);
   show(lizardImage);
   show(alienImage);
-}
+};
 
 function checkChoiceIdMatchHumanChoice() {
   if (currentGame.human.choice === 'rock') {
-    humanChosenFighter.src = "./assets/rock.png"
+    humanChosenFighter.src = './assets/rock.png'
   } else if (currentGame.human.choice === 'paper') {
-    humanChosenFighter.src = "./assets/paper.png"
+    humanChosenFighter.src = './assets/paper.png'
   } else if (currentGame.human.choice === 'scissors') {
-    humanChosenFighter.src = "./assets/scissors.png"
+    humanChosenFighter.src = './assets/scissors.png'
   } else if (currentGame.human.choice === 'alien') {
-    humanChosenFighter.src = "./assets/alien.png"
+    humanChosenFighter.src = './assets/alien.png'
   } else if (currentGame.human.choice === 'lizard') {
-    humanChosenFighter.src = "./assets/lizard.png"
+    humanChosenFighter.src = './assets/lizard.png'
   }
-}
+};
 
 function checkChoiceIdMatchComputerChoice() {
   if (currentGame.computer.choice === 'rock') {
-    computerChosenFighter.src = "./assets/rock.png"
+    computerChosenFighter.src = './assets/rock.png'
   } else if (currentGame.computer.choice === 'paper') {
-    computerChosenFighter.src = "./assets/paper.png"
+    computerChosenFighter.src = './assets/paper.png'
   } else if (currentGame.computer.choice === 'scissors') {
-    computerChosenFighter.src = "./assets/scissors.png"
+    computerChosenFighter.src = './assets/scissors.png'
   } else if (currentGame.computer.choice === 'alien') {
-    computerChosenFighter.src = "./assets/alien.png"
+    computerChosenFighter.src = './assets/alien.png'
   } else if (currentGame.computer.choice === 'lizard') {
-    computerChosenFighter.src = "./assets/lizard.png"
+    computerChosenFighter.src = './assets/lizard.png'
   }
-}
+};
 
 function displayFighters() {
   hide(fighterImageBox)
@@ -111,7 +110,7 @@ function displayFighters() {
   hide(chooseFighterText);
   updateDisplayedScores()
   setTimeout(gameCycle, 3000)
-}
+};
 
 function displayWinnerText() {
  if (currentGame.winner === 'human') {
@@ -121,19 +120,19 @@ function displayWinnerText() {
  } else {
    gameResultText.innerText = `It's a draw!!! 😑`
  }
-}
+};
 
 function updateDisplayedScores() {
   humanDisplayedScore.innerText = `score: ${currentGame.human.score}`
   computerDisplayedScore.innerText = `score: ${currentGame.computer.score}`
-}
+};
 
 function gameCycle() {
   gameResultText.innerText = null;
   show(fighterImageBox)
   hide(chosenBothFighter)
   show(chooseFighterText);
-}
+};
 
 function changeGame() {
   show(classicGameBox);
@@ -143,4 +142,4 @@ function changeGame() {
   hide(fighterImageBox);
   hide(lizardImage);
   hide(alienImage);
-}
+};

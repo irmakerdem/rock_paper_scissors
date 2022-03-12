@@ -3,7 +3,7 @@ class Player {
     this.name = playerName;
     this.score = 0;
     this.choice = null;
-    this.tokens = ['🥳', '😎', '🤠', '🦊', '🌞'];
+    this.tokens = ['😃', '🥳', '😹', '😎', '🦊', '🤠', '🌞'];
   }
   takeTurnClassic(choiceId) {
     this.choice = choiceId || this.getRandomElement(currentGame.classicFighters);
