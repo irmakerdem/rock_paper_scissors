@@ -1,4 +1,4 @@
-# COLORandom!
+# Rock-Paper-Scissors!
 
 ## Table of Contents
 - [Introduction](#introduction)
